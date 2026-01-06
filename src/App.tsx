@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Atlas from "./pages/Atlas";
 import Nexus from "./pages/Nexus";
 import Agentes from "./pages/Agentes";
+import PrintPortfolio from "./pages/PrintPortfolio";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/atlas" element={<Atlas />} />
           <Route path="/nexus" element={<Nexus />} />
           <Route path="/agentes" element={<Agentes />} />
+          <Route path="/print" element={<PrintPortfolio />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

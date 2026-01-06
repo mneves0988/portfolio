@@ -106,3 +106,50 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  @media print {
+    /* Force opacity and remove animations */
+    .opacity-0, .animate-fade-in, .animate-fade-in-up, .animate-glow-pulse {
+      opacity: 1 !important;
+      animation: none !important;
+      transition: none !important;
+      transform: none !important;
+    }
+
+    /* Keep dark background logic */
+    :root, .dark {
+      background-color: #000 !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    /* Hide UI elements */
+    .no-print, header nav, .fixed, .absolute.bottom-8, button {
+      display: none !important;
+    }
+
+    /* Page Breaks */
+    .print-break-before {
+      break-before: page !important;
+    }
+
+    /* Ensure text is readable */
+    h1, h2, h3, h4, p, span, li {
+      color: #fff !important;
+    }
+    
+    .text-primary {
+      color: hsl(30, 100%, 50%) !important;
+    }
+    
+    .text-accent {
+      color: hsl(45, 100%, 60%) !important;
+    }
+
+    .bg-card, .bg-secondary\/30 {
+      background-color: #0a0a0a !important;
+      border: 1px solid #333 !important;
+    }
+  }
+}
